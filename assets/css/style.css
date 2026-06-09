@@ -17,6 +17,11 @@
   --color-bg-cream: #F8FCFA;
   --color-bg-white: #FFFFFF;
   --color-bg-soft: #FAFDFB;
+  --color-bg-base-translucent: rgba(255, 255, 255, 0.82);
+  --color-bg-soft-translucent: rgba(250, 253, 251, 0.72);
+  --color-bg-cream-translucent: rgba(248, 252, 250, 0.78);
+  --color-bg-white-translucent: rgba(255, 255, 255, 0.86);
+  --color-primary-pale-translucent: rgba(236, 254, 238, 0.68);
 
   /* Colors: text */
   --color-text-main: #4A4D52;
@@ -114,32 +119,37 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   position: relative;
   min-width: 320px;
+  width: 100%;
   margin: 0;
   color: var(--color-text-main);
   font-family: var(--font-sans-jp);
   font-size: var(--font-size-base);
   line-height: var(--leading-normal);
   letter-spacing: var(--tracking-normal);
-  background-color: var(--color-bg-base);
+  background-color: transparent;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 .site-bg-deco {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
   pointer-events: none;
   background-color: var(--color-bg-base);
   background-image: url("../images/site-background-deco.png");
   background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: clamp(480px, 92vw, 1200px) auto;
+  background-position: left bottom;
+  background-size: 100% auto;
 }
 
 body.is-menu-open {
@@ -347,12 +357,16 @@ table {
 }
 
 /* Components: header */
+#main-content {
+  background: transparent;
+}
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
   border-bottom: 1px solid rgba(229, 223, 211, 0.72);
-  background-color: rgba(250, 246, 239, 0.9);
+  background-color: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(8px);
 }
 
@@ -797,7 +811,7 @@ table {
   overflow: hidden;
   padding-block: var(--space-10) var(--space-6);
   color: var(--color-text-muted);
-  background-color: var(--color-bg-cream);
+  background-color: var(--color-bg-cream-translucent);
 }
 
 .site-footer__inner {
@@ -938,6 +952,10 @@ table {
   height: 60px;
   line-height: 0;
   pointer-events: none;
+}
+
+.wave-divider path {
+  fill: var(--color-bg-base-translucent);
 }
 
 .wave-divider svg {
@@ -1388,7 +1406,7 @@ table {
   position: relative;
   overflow: hidden;
   padding-top: var(--space-10);
-  background-color: var(--color-bg-base);
+  background-color: var(--color-bg-base-translucent);
 }
 
 .home-concept__heading {
@@ -2024,7 +2042,7 @@ table {
   position: relative;
   overflow: hidden;
   padding-block: var(--space-10) var(--space-16);
-  background: linear-gradient(90deg, var(--color-bg-base), var(--color-bg-soft));
+  background: linear-gradient(90deg, var(--color-bg-base-translucent), var(--color-bg-soft-translucent));
 }
 
 .page-hero__inner {
@@ -2070,7 +2088,7 @@ table {
 .space-policy {
   position: relative;
   padding-block: var(--space-10);
-  background-color: var(--color-bg-base);
+  background-color: var(--color-bg-base-translucent);
 }
 
 .space-overview {
@@ -2260,7 +2278,7 @@ table {
 
 .space-scenes {
   overflow: hidden;
-  background-color: var(--color-bg-soft);
+  background-color: var(--color-bg-soft-translucent);
 }
 
 .space-section-label {
@@ -2486,7 +2504,7 @@ table {
   position: relative;
   overflow: hidden;
   padding-block: var(--space-10) var(--space-20);
-  background: linear-gradient(90deg, var(--color-bg-base) 0%, var(--color-bg-soft) 48%, var(--color-bg-cream) 100%);
+  background: linear-gradient(90deg, var(--color-bg-base-translucent) 0%, var(--color-bg-soft-translucent) 48%, var(--color-bg-cream-translucent) 100%);
 }
 
 .yomogi-hero__inner {
@@ -2565,7 +2583,7 @@ table {
 .yomogi-flow,
 .yomogi-faq {
   padding-block: var(--space-10);
-  background-color: var(--color-bg-base);
+  background-color: var(--color-bg-base-translucent);
 }
 
 .yomogi-concept__grid {
@@ -2593,7 +2611,7 @@ table {
 }
 
 .yomogi-features {
-  background-color: var(--color-bg-soft);
+  background-color: var(--color-bg-soft-translucent);
 }
 
 .yomogi-feature-grid {
@@ -2622,7 +2640,7 @@ table {
 }
 
 .yomogi-menu {
-  background-color: var(--color-bg-base);
+  background-color: var(--color-bg-base-translucent);
 }
 
 .yomogi-menu-grid {
@@ -2685,7 +2703,7 @@ table {
 }
 
 .yomogi-flow {
-  background-color: var(--color-bg-soft);
+  background-color: var(--color-bg-soft-translucent);
 }
 
 .yomogi-flow .step-item__icon {
@@ -2694,7 +2712,7 @@ table {
 }
 
 .yomogi-faq {
-  background-color: var(--color-bg-base);
+  background-color: var(--color-bg-base-translucent);
 }
 
 .yomogi-faq__grid {
@@ -3719,7 +3737,7 @@ table {
   position: relative;
   overflow: hidden;
   padding-block: var(--space-12) var(--space-16);
-  background: linear-gradient(180deg, var(--color-bg-soft), var(--color-bg-base));
+  background: linear-gradient(180deg, var(--color-bg-soft-translucent), var(--color-bg-base-translucent));
 }
 
 .contact-hero .section-heading {
@@ -3743,7 +3761,7 @@ table {
 .contact-main,
 .contact-bottom-cta {
   padding-block: var(--space-8);
-  background-color: var(--color-bg-base);
+  background-color: var(--color-bg-base-translucent);
 }
 
 .contact-main {
@@ -3881,7 +3899,7 @@ table {
   gap: var(--space-6);
   align-items: center;
   padding: var(--space-8);
-  background: linear-gradient(90deg, var(--color-bg-cream), var(--color-bg-soft));
+  background: linear-gradient(90deg, var(--color-bg-cream-translucent), var(--color-bg-soft-translucent));
   border-radius: var(--radius-3xl);
 }
 
@@ -4557,7 +4575,7 @@ table {
 
 .page-hero--simple {
   padding-block: var(--space-10) var(--space-6);
-  background-color: var(--color-bg-soft);
+  background-color: var(--color-bg-soft-translucent);
 }
 
 .page-hero__lead {
@@ -4567,12 +4585,12 @@ table {
 }
 
 .section--soft {
-  background-color: var(--color-bg-soft);
+  background-color: var(--color-bg-soft-translucent);
 }
 
 .page-cta {
   padding-block: var(--space-10);
-  background: linear-gradient(135deg, var(--color-primary-pale), var(--color-bg-white));
+  background: linear-gradient(135deg, var(--color-primary-pale-translucent), var(--color-bg-white-translucent));
 }
 
 .page-cta__inner {
