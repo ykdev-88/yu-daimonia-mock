@@ -117,6 +117,7 @@ html {
 }
 
 body {
+  position: relative;
   min-width: 320px;
   margin: 0;
   color: var(--color-text-main);
@@ -127,6 +128,18 @@ body {
   background-color: var(--color-bg-base);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+.site-bg-deco {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--color-bg-base);
+  background-image: url("../images/site-background-deco.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: clamp(480px, 92vw, 1200px) auto;
 }
 
 body.is-menu-open {
@@ -2163,9 +2176,11 @@ table {
   border-radius: 50%;
 }
 
-.space-equipment-item__icon img {
-  width: 40px;
-  height: 40px;
+.space-equipment-item__icon--text {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .space-equipment-item__label {
@@ -4340,6 +4355,28 @@ table {
   background-position: center;
 }
 
+.home-hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-hero__bg--brand::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero__video {
+    display: none;
+  }
+}
+
 .brand-about__grid,
 .brand-service-split,
 .shop-block__grid {
@@ -4354,6 +4391,36 @@ table {
   font-family: var(--font-serif-jp);
   font-size: var(--font-size-2xl);
   line-height: 1.4;
+}
+
+.shop-block__lead {
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+.shop-block__body h3 {
+  margin-top: var(--space-6);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+.shop-contact-note {
+  margin-top: var(--space-5);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.shop-contact-note a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.shop-block__media img {
+  aspect-ratio: 4 / 3;
+  object-position: center top;
 }
 
 .brand-about__visual img {
@@ -4680,6 +4747,24 @@ table {
   margin-top: var(--space-4);
 }
 
+.shop-service-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: var(--color-bg-soft);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+}
+
+.shop-service-link-row__label {
+  color: var(--color-text-heading);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
 .shop-badge {
   display: inline-block;
   margin-left: var(--space-2);
@@ -4791,8 +4876,8 @@ table {
   }
 
   .shop-block__body h3 {
-    margin-top: var(--space-6);
-    font-size: var(--font-size-base);
+    margin-top: var(--space-5);
+    font-size: var(--font-size-sm);
   }
 
   .shop-service-list li strong {
@@ -4850,7 +4935,7 @@ table {
   }
 
   .space-scene-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .reservation-placeholder {
