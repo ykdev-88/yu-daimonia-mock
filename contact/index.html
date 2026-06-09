@@ -40,6 +40,7 @@
       </a>
       <nav class="global-nav" aria-label="グローバルナビゲーション">
         <ul class="global-nav__list">
+          <li><a href="../">TOP</a></li>
           <li><a href="../health-package/">健康パッケージ</a></li>
           <li><a href="../yomogi/"><span class="phrase-keep">よもぎ蒸し</span></a></li>
           <li><a href="../rental-space/">レンタルスペース</a></li>
@@ -61,6 +62,7 @@
   <div class="mobile-nav-backdrop" aria-hidden="true"></div>
   <nav class="mobile-nav" id="mobile-nav" aria-label="モバイルナビゲーション">
     <ul class="mobile-nav__list">
+      <li><a href="../">TOP</a></li>
       <li><a href="../health-package/">健康パッケージ</a></li>
       <li><a href="../yomogi/"><span class="phrase-keep">よもぎ蒸し</span></a></li>
       <li><a href="../rental-space/">レンタルスペース</a></li>
@@ -83,10 +85,22 @@
 
     <section class="section contact-main">
       <div class="container">
-        <div class="contact-tabs" role="tablist" aria-label="店舗選択">
-          <button class="contact-tab is-active" type="button" role="tab" aria-selected="true" data-contact-tab="sakae">覚王山店</button>
-          <button class="contact-tab" type="button" role="tab" aria-selected="false" data-contact-tab="gifu">岐阜店</button>
-          <button class="contact-tab" type="button" role="tab" aria-selected="false" data-contact-tab="nishi">名古屋西店</button>
+        <div class="contact-shop-select">
+          <p class="contact-tabs__label" id="contact-tabs-label">店舗を選んでください</p>
+          <div class="contact-tabs" role="tablist" aria-labelledby="contact-tabs-label">
+            <button class="contact-tab is-active" type="button" role="tab" aria-selected="true" data-contact-tab="sakae">
+              <span class="contact-tab__name">覚王山店</span>
+              <span class="contact-tab__note">メールフォーム</span>
+            </button>
+            <button class="contact-tab" type="button" role="tab" aria-selected="false" data-contact-tab="gifu">
+              <span class="contact-tab__name">岐阜店</span>
+              <span class="contact-tab__note">Instagram・LINE</span>
+            </button>
+            <button class="contact-tab" type="button" role="tab" aria-selected="false" data-contact-tab="nishi">
+              <span class="contact-tab__name">名古屋西店</span>
+              <span class="contact-tab__note">準備中</span>
+            </button>
+          </div>
         </div>
 
         <div class="contact-panel is-active" data-contact-panel="sakae" role="tabpanel">
@@ -157,6 +171,7 @@
       </div>
       <nav class="site-footer__nav" aria-label="フッターナビゲーション">
         <ul>
+          <li><a href="../">TOP</a></li>
           <li><a href="../health-package/">健康パッケージ</a></li>
           <li><a href="../yomogi/"><span class="phrase-keep">よもぎ蒸し</span></a></li>
           <li><a href="../rental-space/">レンタルスペース</a></li>
