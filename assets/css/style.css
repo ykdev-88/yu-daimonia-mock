@@ -4440,25 +4440,70 @@ table {
   min-height: 280px;
 }
 
+.contact-shop-select {
+  margin-bottom: var(--space-8);
+}
+
+.contact-tabs__label {
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+}
+
 .contact-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-bottom: var(--space-6);
+  display: grid;
+  gap: var(--space-3);
 }
 
 .contact-tab {
-  padding: var(--space-3) var(--space-5);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-pill);
+  display: grid;
+  gap: var(--space-1);
+  justify-items: center;
+  min-height: 76px;
+  padding: var(--space-4) var(--space-5);
+  color: var(--color-text-main);
+  font: inherit;
+  text-align: center;
   background: var(--color-bg-white);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
   cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.contact-tab__name {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+}
+
+.contact-tab__note {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--leading-snug);
+}
+
+.contact-tab:hover:not(.is-active) {
+  background: var(--color-primary-pale);
+  border-color: var(--color-primary-light);
 }
 
 .contact-tab.is-active {
   color: var(--color-text-on-primary);
-  background: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-tab.is-active .contact-tab__note {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.contact-tab:focus-visible {
+  outline: 3px solid var(--color-primary-light);
+  outline-offset: 2px;
 }
 
 .contact-panel {
@@ -4533,6 +4578,16 @@ table {
 }
 
 @media (min-width: 768px) {
+  .contact-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+
+  .contact-tab {
+    min-height: 88px;
+    padding: var(--space-5) var(--space-6);
+  }
+
   .brand-about__grid,
   .brand-service-split,
   .shop-block__grid {
