@@ -4351,6 +4351,15 @@ table {
   gap: var(--space-6);
 }
 
+.health-intro__visual img {
+  display: block;
+  width: 100%;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-md);
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
 .health-intro__text h2 {
   font-family: var(--font-serif-jp);
   font-size: clamp(1.25rem, 4vw, var(--font-size-2xl));
