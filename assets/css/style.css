@@ -4356,6 +4356,14 @@ table {
   line-height: 1.4;
 }
 
+.brand-about__visual img {
+  display: block;
+  width: 100%;
+  border-radius: var(--radius-xl);
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
 .brand-feature-grid,
 .plan-grid {
   display: grid;
