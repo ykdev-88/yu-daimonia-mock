@@ -810,6 +810,20 @@ table {
   gap: var(--space-8);
 }
 
+.site-footer__nav ul {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.site-footer__nav a {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.site-footer__nav a:hover {
+  color: var(--color-primary);
+}
+
 .site-footer__group-title {
   margin-bottom: var(--space-3);
   color: var(--color-text-heading);
@@ -1139,11 +1153,26 @@ table {
   }
 
   .site-footer__inner {
-    width: min(100% - (var(--container-padding-pc) * 2), var(--container-max));
+    display: grid;
+    grid-template-columns: minmax(220px, 360px) auto;
+    justify-content: center;
+    align-items: start;
+    gap: var(--space-10);
+    width: fit-content;
+    max-width: min(100% - (var(--container-padding-pc) * 2), var(--container-max));
+  }
+
+  .site-footer__brand {
+    margin-bottom: 0;
   }
 
   .site-footer__nav {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-self: center;
+  }
+
+  .site-footer__bottom {
+    grid-column: 1 / -1;
+    width: 100%;
   }
 
   .step-list {
@@ -1192,21 +1221,7 @@ table {
   }
 
   .site-footer__inner {
-    display: grid;
-    grid-template-columns: minmax(240px, 0.9fr) minmax(0, 2fr);
     gap: var(--space-12);
-  }
-
-  .site-footer__brand {
-    margin-bottom: 0;
-  }
-
-  .site-footer__nav {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .site-footer__bottom {
-    grid-column: 1 / -1;
   }
 
   .site-footer--compact .site-footer__inner {
@@ -4334,6 +4349,7 @@ table {
 
 .brand-about__text h2,
 .brand-service-split__body h2,
+.brand-service-health__head h2,
 .shop-block__body h2 {
   font-family: var(--font-serif-jp);
   font-size: var(--font-size-2xl);
@@ -4388,38 +4404,35 @@ table {
   text-align: left;
 }
 
-.brand-service-health__layout {
+.brand-service-health {
   display: grid;
   gap: var(--space-6);
-  align-items: center;
+}
+
+.brand-service-health__head {
+  display: grid;
+  gap: var(--space-3);
 }
 
 .brand-service-health__media {
   margin: 0;
+  width: 100%;
+  max-width: 920px;
+  margin-inline: auto;
 }
 
 .brand-service-health__media img {
   display: block;
   width: 100%;
-  border-radius: var(--radius-2xl);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-md);
   object-fit: cover;
   aspect-ratio: 3 / 2;
 }
 
-.brand-service-health__body {
-  display: grid;
-  gap: var(--space-5);
-}
-
 .brand-service-health__lead {
   color: var(--color-text-muted);
-  font-size: var(--font-size-sm);
   line-height: var(--leading-relaxed);
-}
-
-.brand-service--health .home-section-label {
-  margin-bottom: 0;
 }
 
 .brand-feature-grid--health {
@@ -4729,18 +4742,12 @@ table {
     gap: var(--space-8);
   }
 
-  .brand-service-health__layout {
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-    gap: var(--space-10);
-    align-items: center;
-  }
-
-  .brand-service-health__body {
-    text-align: left;
+  .brand-service-health {
+    gap: var(--space-8);
   }
 
   .brand-feature-grid--health {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .shop-block__grid--reverse .shop-block__media {
@@ -4770,6 +4777,7 @@ table {
 
   .brand-about__text h2,
   .brand-service-split__body h2,
+  .brand-service-health__head h2,
   .shop-block__body h2 {
     font-size: clamp(1.25rem, 5vw, var(--font-size-2xl));
   }
@@ -4859,14 +4867,6 @@ table {
   .section-lead {
     padding-inline: var(--space-1);
     font-size: var(--font-size-sm);
-  }
-
-  .brand-service-health__body {
-    text-align: center;
-  }
-
-  .brand-service__action--start {
-    text-align: center;
   }
 
   .brand-service__action--start .btn {
