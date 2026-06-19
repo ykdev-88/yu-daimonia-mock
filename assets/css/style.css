@@ -4861,6 +4861,52 @@ a.contact-tab {
   color: var(--color-text-muted);
 }
 
+.page-coming-soon__card {
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.page-coming-soon__badge {
+  display: inline-block;
+  margin-bottom: var(--space-4);
+  padding: var(--space-1) var(--space-3);
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  background: var(--color-primary-pale);
+  border-radius: var(--radius-pill);
+}
+
+.page-coming-soon__card h2 {
+  margin-bottom: var(--space-4);
+  font-family: var(--font-serif-jp);
+  font-size: var(--font-size-xl);
+  color: var(--color-text-heading);
+}
+
+.page-coming-soon__card p {
+  line-height: var(--leading-relaxed);
+}
+
+.page-coming-soon__note {
+  margin-top: var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.page-coming-soon__card .btn {
+  width: auto;
+  margin-top: var(--space-6);
+}
+
+.brand-service-health__status {
+  display: block;
+  margin-top: var(--space-2);
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
 .shop-info-list {
   display: grid;
   gap: var(--space-3);
