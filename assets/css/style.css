@@ -5030,3 +5030,94 @@ table {
     min-width: min(100%, 280px);
   }
 }
+
+/* TOP: scroll / hero animations */
+@keyframes home-hero-intro {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-hero--brand .home-hero__intro-item {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: home-hero-intro 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.home-hero--brand .home-hero__content--intro > .home-hero__intro-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.home-hero--brand .home-hero__content--intro > .home-hero__intro-item:nth-child(2) {
+  animation-delay: 0.28s;
+}
+
+.home-hero--brand .home-hero__content--intro > .home-hero__intro-item:nth-child(3) {
+  animation-delay: 0.46s;
+}
+
+[data-animate="fade-up"] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-animate="fade-up"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-animate="split"] .brand-service-split__media,
+[data-animate="split"] .brand-service-split__body {
+  opacity: 0;
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-animate="split"] .brand-service-split__media {
+  transform: translateX(-32px);
+}
+
+[data-animate="split"] .brand-service-split__body {
+  transform: translateX(32px);
+  transition-delay: 0.1s;
+}
+
+.brand-service--split-reverse[data-animate="split"] .brand-service-split__media {
+  transform: translateX(32px);
+}
+
+.brand-service--split-reverse[data-animate="split"] .brand-service-split__body {
+  transform: translateX(-32px);
+}
+
+[data-animate="split"].is-visible .brand-service-split__media,
+[data-animate="split"].is-visible .brand-service-split__body {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero--brand .home-hero__intro-item {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  [data-animate="fade-up"],
+  [data-animate="split"] .brand-service-split__media,
+  [data-animate="split"] .brand-service-split__body {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
