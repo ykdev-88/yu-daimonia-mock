@@ -4744,6 +4744,18 @@ table {
   outline-offset: 2px;
 }
 
+a.contact-tab {
+  text-decoration: none;
+}
+
+.shop-nav-section {
+  padding-block: var(--space-6) var(--space-2);
+}
+
+.shop-block {
+  scroll-margin-top: calc(64px + var(--space-4));
+}
+
 .contact-panel {
   display: none;
 }
