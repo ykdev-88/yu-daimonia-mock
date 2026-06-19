@@ -4500,6 +4500,13 @@ table {
   gap: var(--space-5);
 }
 
+@media (min-width: 1024px) {
+  .plan-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+  }
+}
+
 .health-intro {
   display: grid;
   gap: var(--space-6);
@@ -4610,6 +4617,61 @@ table {
   display: grid;
   gap: var(--space-4);
   padding: var(--space-6);
+}
+
+.plan-card__title {
+  display: grid;
+  gap: var(--space-1);
+  font-family: var(--font-serif-jp);
+  font-size: var(--font-size-xl);
+  line-height: var(--leading-snug);
+}
+
+.plan-card__line {
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+}
+
+.plan-card__catch {
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+}
+
+.plan-card__desc {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.plan-card__includes {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  font-size: var(--font-size-sm);
+  line-height: var(--leading-relaxed);
+  background: var(--color-bg-soft);
+  border-radius: var(--radius-md);
+}
+
+.plan-card__includes li {
+  position: relative;
+  padding-left: 1.1em;
+}
+
+.plan-card__includes li::before {
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  content: "・";
+}
+
+.plan-card__action {
+  margin-top: auto;
 }
 
 .plan-card__price {
@@ -4850,6 +4912,50 @@ a.contact-tab {
   border-radius: var(--radius-pill);
 }
 
+.shop-equipment {
+  margin-top: var(--space-6);
+}
+
+.shop-equipment-list {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+.shop-equipment-item {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+}
+
+.shop-equipment-item__title {
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+}
+
+.shop-equipment-item p {
+  line-height: var(--leading-relaxed);
+}
+
+.shop-equipment-item__link {
+  width: 100%;
+  margin-top: var(--space-1);
+  text-align: center;
+}
+
+.shop-equipment-footnote {
+  margin-top: var(--space-5);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--leading-relaxed);
+  text-align: center;
+}
+
 .contact-form {
   display: grid;
   gap: var(--space-5);
@@ -4898,10 +5004,6 @@ a.contact-tab {
 
   .brand-feature-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .plan-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .health-intro {
