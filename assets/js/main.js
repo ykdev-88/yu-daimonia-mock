@@ -166,3 +166,63 @@
     observer.observe(element);
   });
 })();
+
+(() => {
+  const nav = document.querySelector("[data-shop-nav]");
+
+  if (!nav) {
+    return;
+  }
+
+  const links = nav.querySelectorAll("[data-shop-link]");
+  const header = document.querySelector(".site-header");
+
+  const getScrollOffset = () => (header?.offsetHeight ?? 64) + 16;
+
+  const setActiveLink = (targetId) => {
+    links.forEach((link) => {
+      const isActive = link.dataset.shopLink === targetId;
+      link.classList.toggle("is-active", isActive);
+
+      if (isActive) {
+        link.setAttribute("aria-current", "true");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  const scrollToShop = (targetId) => {
+    const target = document.getElementById(targetId);
+
+    if (!target) {
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const top = target.getBoundingClientRect().top + window.scrollY - getScrollOffset();
+
+    window.scrollTo({
+      top,
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+    });
+
+    setActiveLink(targetId);
+    history.replaceState(null, "", `#${targetId}`);
+  };
+
+  links.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      scrollToShop(link.dataset.shopLink);
+    });
+  });
+
+  const hashTarget = window.location.hash.slice(1);
+
+  if (hashTarget && nav.querySelector(`[data-shop-link="${hashTarget}"]`)) {
+    window.requestAnimationFrame(() => {
+      scrollToShop(hashTarget);
+    });
+  }
+})();
