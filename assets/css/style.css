@@ -4505,6 +4505,10 @@ table {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: stretch;
   }
+
+  .brand-feature-grid--salon {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 .health-intro {
@@ -4613,6 +4617,117 @@ table {
   align-content: center;
 }
 
+.home-salon__head {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+  text-align: center;
+}
+
+.home-salon__head h2 {
+  font-family: var(--font-serif-jp);
+  font-size: var(--font-size-2xl);
+  line-height: 1.4;
+}
+
+.home-salon__intro {
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+.home-salon-equipment__item {
+  padding-block: var(--space-5);
+}
+
+.home-salon-equipment__item:first-child {
+  padding-top: 0;
+}
+
+.home-salon-equipment .brand-service-split {
+  gap: var(--space-5);
+}
+
+.home-salon-equipment .brand-service-split__media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-salon-equipment .brand-service-split__media img,
+.home-salon-equipment .brand-service-split__media .placeholder-img {
+  width: 100%;
+  max-width: clamp(10rem, 45vw, 20rem);
+  height: auto;
+  margin-inline: auto;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  object-fit: contain;
+}
+
+.home-salon-equipment .brand-service-split__body {
+  gap: var(--space-3);
+}
+
+.home-salon-equipment__title {
+  display: grid;
+  gap: var(--space-2);
+  font-family: var(--font-serif-jp);
+  font-size: var(--font-size-lg);
+  line-height: var(--leading-snug);
+}
+
+.home-salon-equipment__title .shop-badge {
+  justify-self: start;
+}
+
+.home-salon__summary {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 42rem;
+  margin-top: var(--space-6);
+  margin-inline: auto;
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  text-align: center;
+}
+
+.home-salon__programs {
+  margin-top: var(--space-8);
+}
+
+.home-salon__programs-title {
+  margin-bottom: var(--space-5);
+  font-family: var(--font-serif-jp);
+  font-size: var(--font-size-xl);
+  line-height: var(--leading-snug);
+  text-align: center;
+}
+
+.brand-feature-grid--salon {
+  gap: var(--space-4);
+}
+
+.home-salon-program-card {
+  padding: var(--space-5);
+}
+
+.home-salon-program-card .feature-card__icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: var(--space-3);
+  font-size: var(--font-size-lg);
+}
+
+.home-salon-program-card .feature-card__title {
+  font-family: var(--font-serif-jp);
+  font-size: var(--font-size-base);
+}
+
+.home-salon-program-card .feature-card__text {
+  font-size: var(--font-size-sm);
+  line-height: var(--leading-relaxed);
+}
+
 .plan-card {
   display: grid;
   gap: var(--space-4);
@@ -4674,10 +4789,41 @@ table {
   margin-top: auto;
 }
 
+.plan-card__badge {
+  display: inline-flex;
+  align-self: start;
+  padding: var(--space-1) var(--space-4);
+  color: var(--color-text-on-primary);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  background: var(--color-primary);
+  border-radius: var(--radius-pill);
+}
+
+.plan-card__badge--featured {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+}
+
+.plan-card--featured {
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-md);
+}
+
+.plan-card__price-regular {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.plan-card__price-regular span {
+  text-decoration: line-through;
+}
+
 .plan-card__price {
-  color: var(--color-primary);
+  color: var(--color-required);
   font-family: var(--font-serif-jp);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
 }
 
 .page-hero--simple {
@@ -4958,50 +5104,6 @@ a.contact-tab {
   border-radius: var(--radius-pill);
 }
 
-.shop-equipment {
-  margin-top: var(--space-6);
-}
-
-.shop-equipment-list {
-  display: grid;
-  gap: var(--space-6);
-  margin-top: var(--space-4);
-}
-
-.shop-equipment-item {
-  display: grid;
-  gap: var(--space-3);
-  padding: var(--space-5);
-  background: var(--color-bg-soft);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-lg);
-}
-
-.shop-equipment-item__title {
-  color: var(--color-primary-dark);
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  line-height: var(--leading-snug);
-}
-
-.shop-equipment-item p {
-  line-height: var(--leading-relaxed);
-}
-
-.shop-equipment-item__link {
-  width: 100%;
-  margin-top: var(--space-1);
-  text-align: center;
-}
-
-.shop-equipment-footnote {
-  margin-top: var(--space-5);
-  color: var(--color-text-muted);
-  font-size: var(--font-size-sm);
-  line-height: var(--leading-relaxed);
-  text-align: center;
-}
-
 .contact-form {
   display: grid;
   gap: var(--space-5);
@@ -5066,8 +5168,22 @@ a.contact-tab {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .brand-feature-grid--salon {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .shop-block__grid--reverse .shop-block__media {
     order: 2;
+  }
+
+  .home-salon-equipment .brand-service-split {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--space-6);
+  }
+
+  .home-salon-equipment .brand-service-split__media img,
+  .home-salon-equipment .brand-service-split__media .placeholder-img {
+    max-width: 20rem;
   }
 }
 
@@ -5094,6 +5210,7 @@ a.contact-tab {
   .brand-about__text h2,
   .brand-service-split__body h2,
   .brand-service-health__head h2,
+  .home-salon__head h2,
   .shop-block__body h2 {
     font-size: clamp(1.25rem, 5vw, var(--font-size-2xl));
   }
